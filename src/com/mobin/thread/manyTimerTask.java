@@ -10,7 +10,7 @@ import java.util.TimerTask;
  * Created by Mobin on 2016/1/27.
  * 多TimerTask及延时的测试
  */
-public class manyTimerTask  {
+public class ManyTimerTask  {
     private static  Timer timer = new Timer();
     public static  class  MyTimerTask extends TimerTask{
         public void run() {
