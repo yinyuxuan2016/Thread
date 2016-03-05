@@ -4,6 +4,7 @@ import java.util.Random;
 
 /**
  * Created by Mobin on 2016/3/5.
+ * 一个ThreadLocal代表一个变量，所以其中只能放一个数据，当你有多个变量需要共享时就应该将定义一个对象来包装这些变量再在ThreadLocal对象中存储这个对象
  */
 public class ThreadLocalTestImprove {
 
