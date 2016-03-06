@@ -38,6 +38,7 @@ public class ThreadLocalTestImprove {
     }
 
     static  class MyThreadLocal{
+        private MyThreadLocal(){}//禁止外部直接创建对象
         private static  ThreadLocal<MyThreadLocal> mapThreadLocal = new ThreadLocal<MyThreadLocal>();
         private static  MyThreadLocal getInstance(){
             MyThreadLocal myThreadLocal = mapThreadLocal.get();
