@@ -24,7 +24,7 @@ public class ReentrackReadLock implements Runnable {
             return false;
         if (isRead(readThread))
             return true;
-        return true;
+        return true;         //第一次时以上条件都不满足
     }
 
     public int getReadThreadCount(Thread readThread) {  //获取读线程的总数
