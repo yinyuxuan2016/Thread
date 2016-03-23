@@ -9,7 +9,7 @@ import java.util.Map;
  * 条件：当前线程没有写操作或写请求，必须持有读线程（不管是否有读请求）
  */
 public class ReentrackReadLock implements Runnable {
-    Map<Thread, Integer> mapReadLock = new HashMap<Thread, Integer>();
+    Map<Thread, Integer> mapReadLock = new HashMap<Thread, Integer>();   //在读写锁中读线程是允许多个的，所以用map
     private int write = 0;
     private int writeRequest = 0;
 
