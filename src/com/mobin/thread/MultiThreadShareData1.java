@@ -24,7 +24,6 @@ public class MultiThreadShareData1 {
         }
     }
 
-
     static  class Sharedata{
         private int count = 10;
         private  boolean flag = true;
