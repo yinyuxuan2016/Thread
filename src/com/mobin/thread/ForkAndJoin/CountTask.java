@@ -18,7 +18,6 @@ public class CountTask extends RecursiveTask<Integer>{
           this.end  = end;
     }
 
-    @Override
     protected Integer compute() {
         int sum = 0;
         //判断任务是否已经足够小了
