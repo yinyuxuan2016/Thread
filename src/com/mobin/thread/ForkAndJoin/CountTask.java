@@ -53,7 +53,7 @@ public class CountTask extends RecursiveTask<Integer>{
         //生成一个计算任务，计算1+2+3+4的和
         CountTask sumTask = new CountTask(1,4);
 
-        //执行任务
+        //通过Future来执行任务能获得线程运行结果
         Future<Integer> result = forkJoinPool.submit(sumTask);
 
         try {
