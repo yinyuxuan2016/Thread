@@ -1,4 +1,4 @@
-package com.mobin.thread;
+package com.mobin.thread.Executor;
 
 import java.util.concurrent.*;
 
@@ -11,9 +11,9 @@ public class CallableAndFuture {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         Future<String> future = executor.submit(new Callable<String>() {
             public String call() throws Exception {
-                return "mobin";
+                return "MOBIN";
             }
         });
-        System.out.println(future.get());
+        System.out.println("任务的执行结果："+future.get());
     }
 }
