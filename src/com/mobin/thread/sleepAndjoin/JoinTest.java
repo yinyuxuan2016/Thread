@@ -13,7 +13,7 @@ public class JoinTest {
             synchronized (b){
                 try {
                     b.start();
-                    b.join();
+                    b.join(6000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
