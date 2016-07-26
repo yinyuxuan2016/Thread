@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Created by Administrator on 2016/7/26.
+ * Created by MOBIN on 2016/7/26.
  * 注意：
  * 1.可以并行处理
  *
