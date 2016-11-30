@@ -18,7 +18,7 @@ public class BoundedBeffer {
     public void put(Object x) throws InterruptedException {
         lock.lock();
         try {
-            while (count == items.length)  //说明队列已满，需要等待
+            while (count == items.length)  //说明队列已满，需要等待（测试条件谓词）
                 notFull.await();
             if(++putptr == items.length)
                 putptr = 0;
@@ -33,7 +33,7 @@ public class BoundedBeffer {
     public Object take(Object x) throws InterruptedException {
         lock.lock();
         try{
-            while (count == 0)  //说明队列元素为空，没有值可等待值的插入
+            while (count == 0)  //说明队列元素为空，没有值可等待值的插入（测试条件谓词）
                 notEmpty.await();
             if(++takeptr == items.length)
                 takeptr = 0;
