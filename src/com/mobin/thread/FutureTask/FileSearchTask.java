@@ -17,25 +17,24 @@ import java.util.concurrent.FutureTask;
  */
 public class FileSearchTask {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        String path = "E:\\DATA\\PUBLIC\\NOCE\\AGG\\AGG_MRO_CHR_RELATE\\day=20161020\\hour=2016102011\\vendor=ERS\\10";
-        String keyword = "mobin";
+        String path = args[0];
+        String keyword = args[1];
         int c = 0;
         File[] files = new File(path).listFiles();
         ArrayList<Future<Integer>> rs = new ArrayList<>();
-        for(File file: files){
+        for(File file: files){  //每个文件启动一个task去查找
             MatchCount count = new MatchCount();
             count.file = file;
             count.keyword = keyword;
             FutureTask<Integer> task = new FutureTask(count);
-            rs.add(task);
+            rs.add(task); //将任务返回的结果添加到集合中
             Thread thread = new Thread(task);
             thread.start();
         }
 
         for(Future<Integer> f: rs){
-            c += f.get();
+            c += f.get(); //迭代返回结果并累加
         }
-
         System.out.println("包含关键字的总文件数为：" + c);
     }
 }
@@ -45,7 +44,7 @@ class  MatchCount implements Callable<Integer>{
     public String keyword;
     private  Integer count = 0;
 
-    public Integer call() throws Exception {
+    public Integer call() throws Exception {   //call封装线程所需做的任务
         if(search(file))
               count ++;
         return count;
