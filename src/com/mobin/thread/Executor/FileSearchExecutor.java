@@ -24,7 +24,7 @@ public class FileSearchExecutor {
             count.file = file;
             count.keyword = keyword;
             Future<Integer>  task = pool.submit(count);
-            rs.add(task);
+            rs.add(task); //将任务的返回结果添加到集合中
         }
 
         for(Future<Integer> f: rs) {
